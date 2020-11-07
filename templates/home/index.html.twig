@@ -1,0 +1,1048 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thomas GEORGE{% endblock %}
+
+{% block body %}
+    
+    <!-- Sidebar Menu --> 
+    <i class="fas fa-bars menu-burger text-light bg-dark"></i>
+
+    <nav class="sidebar">
+        <label for="menu">
+            <i class="fas fa-times menu-close text-light"></i>
+        </label>
+        <ul class="pl-0">
+            <li class="menu-items"><a class="menu-link" href="#home"><i class="fas fa-home mr-4 mr-xl-2"></i>Home</a></li>
+            <li class="menu-items"><a class="menu-link" href="#read-more"><i class="fas fa-user mr-4 mr-xl-2"></i>À propos</a></li>
+            <li class="menu-items"><a class="menu-link" href="#education"><i class="fas fa-graduation-cap mr-3 mr-xl-2"></i>Parcours</a></li>
+            <li class="menu-items"><a class="menu-link" href="#skills"><i class="fas fa-laptop-code mr-3 mr-xl-2"></i>Compétences</a></li>
+            <li class="menu-items"><a class="menu-link" href="#projects"><i class="far fa-window-restore mr-4 mr-xl-2"></i>Réalisations</a></li>
+            <li class="menu-items"><a class="menu-link" href="#jobs"><i class="fas fa-briefcase mr-4 mr-xl-2"></i>Expériences</a></li>
+            <li class="menu-items"><a class="menu-link" href="#recommandations"><i class="fas fa-pen-nib mr-4 mr-xl-2"></i>Recommandations</a></li>
+            <li class="menu-items"><a class="menu-link" href="#contact"><i class="fas fa-envelope mr-4 mr-xl-2"></i>Contact</a></li>
+        </ul>
+    </nav>
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <!-- Add Button -->
+    <div class="add-btn" data-toggle="modal" data-target="#add-modal"><i class="fas fa-plus"></i></div>
+
+    <!-- Add Modal -->
+    <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="add-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-modal border-custom-green">
+                <div class="modal-body">
+                    <div class="row col-12 text-light text-center"><h3 class="mx-auto mt-3 mb-4">Ajouter un élément</h3></div>
+                    <div class="row vh-20">
+                        <div class="col-12 col-xl-4">
+                            <div class="w-100 h-100 bg-grey rounded"></div>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="w-100 h-100 bg-grey rounded"></div>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="w-100 h-100 bg-grey rounded"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 vh-20">
+                        <div class="col-12 col-xl-4">
+                            <div class="w-100 h-100 bg-grey rounded"></div>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="w-100 h-100 bg-grey rounded"></div>
+                        </div>
+                        <div class="col-12 col-xl-4">
+                            <div class="w-100 h-100 bg-grey rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!--  Home Section -->
+    <section id="home" class="container-fluid container-xl vh-full">
+        <div class="row height-100">
+            <div class="col-12 col-xl-6 order-2 order-xl-1 pl-xl-5 d-flex flex-column justify-content-start justify-content-xl-center align-items-center align-items-xl-start">
+                <h5 class="h5-sm text-light mb-4">Bonjour, je suis<span id="cursor" class="text-custom-green font-weight-bold">|</span></h5>
+
+                <h1 class="h1-sm mb-0 text-custom-green">Thomas GEORGE</h1>
+                <h3 class="h3-sm text-light">Développeur Web</h3>
+                
+                <h5 class="h5-sm mt-5 mt-xl-3 text-light">
+                    <i class="far fa-envelope"></i> contact@thomas-george.com
+                </h5>
+                <h3 class="hide-sm text-light">
+                    <a class="text-white" href="https://www.linkedin.com/in/thomasgeorge51/" name="linkedin" target="_blank"><i class="fab fa-linkedin mr-2 pointer"></i></a>
+                    <a class="text-white" href="https://github.com/ThomasG51" name="github" target="_blank"><i class="fab fa-github-square mr-2 pointer"></i>
+                    <a class="text-white" href="https://twitter.com/ThomasG51" name="linkedin" target="_blank"><i class="fab fa-twitter-square mr-2 pointer"></i>
+                    <a class="text-white" href="https://www.instagram.com/thomas_george_51" name="linkedin" target="_blank"><i class="fab fa-instagram-square mr-2 pointer"></i>
+                </h3>
+
+                <a href="#read-more" class="btn btn-custom-green rounded-0 text-light h5-sm px-4 mt-5 mt-xl-4 menu-link">En savoir plus.</a>
+            </div>
+            <div class="col-12 col-xl-6 order-1 order-xl-2 d-flex align-items-center justify-content-center">
+                <figure class="width-60 width-sm-80 mb-0">
+                    <img src="images/profil.png" alt="profil" class="width-100 border-rounded-green">
+                </figure>
+            </div>
+        </div>
+        {# <div class="color-mode text-white d-flex">
+            <p>Mode</p>
+            <div class="light-color-btn ml-2 pointer"></div>
+            <div class="dark-color-btn ml-2 pointer"></div>
+        </div> #}
+    </section>
+
+    <!--  About Me Section -->
+    <section id="read-more" class="container-fluid container-xl vh-50">
+        <div class="row height-100 d-flex justify-content-center align-items-center px-3 px-xl-0">
+            <div 
+            class="col-12 bg-grey vh-30 vh-sm-40 text-light text-center d-flex flex-column justify-content-center"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <i class="fas fa-quote-left quotes-title"></i>
+
+                <h3 class="h3-sm text-custom-green mb-4 mb-xl-2">À propos de moi</h3>
+                <h5 class="h5-sm pl-3 pr-3">Passionné par les technologies du Web depuis mon premier clique sur une souris, je vous propose aujourd’hui de partager ma passion et mes compétences en développement de sites et applications web.</h5>
+
+                <a href="files/CV_THOMAS_GEORGE.pdf" class="btn btn-custom-green rounded-0 text-light mt-5 mt-xl-4 px-5 mx-auto h5-sm" download><i class="fas fa-download mr-1"></i>Télécharger mon CV.</a>
+            </div>
+        </div>
+    </section>
+
+    <!--  Education Section -->
+    <section id="education" class="container-fluid container-xl">
+        <div class="row">
+            <div class="col-12 col-xl-6 pl-xl-0 mt-5 mt-xl-4 mb-5 mb-xl-0">
+                <h3 class="h3-sm text-white text-center text-xl-left">Diplômes</h3>
+
+                <div 
+                class="bg-grey mt-4 p-4 position-relative"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <h5 class="h5-sm text-custom-green">
+                        Développeur d'application : spécialisation symfony
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </h5>
+                    <p class="text-sm text-white mb-0"><i class="fas fa-graduation-cap"></i> Bac+4 - Niveau 6 C.E - Titre RNCP</p>
+                    <p class="text-sm text-white">Openclassrooms - Paris</p>
+
+                    <p class="text-sm text-white mb-0"><i class="fas fa-user-circle"></i> Mentor : <a href="https://thomas-boileau.fr" alt="thomas-boileau.fr" class="text-light" target="_blank">Thomas Boileau</a></p>
+                    <p class="text-sm text-white mb-0">8 projets réalisés.</p>
+
+                    <p id="show1" class="text-sm show-more text-white mt-4">
+                        - Intégration d'un thème Wordpress pour un client.<br/>
+                        - Analyse des besoins d'un client pour son festival de films.<br/>
+                        - Conception de la solution technique pour un site de restauration.<br/>
+                        - Création d'un blog en PHP sans utiliser de framework.<br/>
+                        - Développement complet du site communautaire SnowTricks.<br/>
+                        - Création d'un web service exposant une API.<br/>
+                        - Amélioration d'une application existante de ToDo & Co.<br/>
+                        - Construction d'une veille technologique.<br/>
+                    </p>
+
+                    <i id="btn-diplome1" class="h3-sm fas fa-chevron-down more-btn"></i>
+                </div>
+
+                <div 
+                class="bg-grey mt-4 p-4 position-relative"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <h5 class="h5-sm text-custom-green">
+                        Développeur Web
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </h5>
+                    <p class="text-sm text-white mb-0"><i class="fas fa-graduation-cap"></i> Bac+2 - Niveau 5 C.E - Titre RNCP</p>
+                    <p class="text-sm text-white">Openclassrooms - Paris</p>
+
+                    <p class="text-sm text-white mb-0"><i class="fas fa-user-circle"></i> Mentor : <a href="https://michael-godinhodacosta.fr/" alt="michael-godinhodacosta.fr" class="text-light" target="_blank">Michaël Godino Da-Costa</a></p>
+                    <p class="text-sm text-white mb-0">5 projets réalisés.</p>
+
+                    <p id="show2" class="text-sm show-more text-white mt-4">
+                        - Intégration de la maquette du site d'une agence web.<br/>
+                        - Création d'un site en personnalisant un thème WordPress.<br/>
+                        - Conception d'une carte interactive de location de vélos.<br/>
+                        - Création d'un blog pour un écrivain.<br/>
+                        - Présentation libre d'un projet personnel.<br/>
+                    </p>
+
+                    <i id="btn-diplome2" class="h3-sm fas fa-chevron-down more-btn"></i>
+                </div>
+            </div>
+            <div class="col-12 col-xl-6 pl-xl-3 mt-5 mt-xl-4">
+                <h3 class="h3-sm text-white text-center text-xl-left">Certifications</h3>
+
+                <div class="bg-grey mt-4 p-4 position-relative text-white"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img class="width-40 d-block" src="images/fcc_primary_large.jpg" alt="">
+                    <span class="text-sm"><i class="fas fa-caret-right mt-3 text-custom-green"></i> JavaScript Algorithmes and Data Structures</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Responsive Web Design</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                </div>
+
+                <div class="bg-grey mt-4 p-4 position-relative text-white"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <h5 class="h5-sm text-white mb-0"><i class="fab fa-linkedin" style="color: #0477B5"></i> LinkedIn</h5>
+                    <span class="text-sm"><i class="fas fa-caret-right mt-3 text-custom-green"></i> Git</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> HyperText Markup Language <small>(HTML5)</small></span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Cascade Style Sheet <small>(CSS3)</small></span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                </div>
+
+                <div class="bg-grey mt-4 p-4 position-relative text-white"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <h5 class="h5-sm text-white mb-0"><i class="fab fa-apple" style="color: #c1c1c1"></i> Apple</h5>
+                    <span class="text-sm"><i class="fas fa-caret-right mt-3 text-custom-green"></i> Apple Certified Support Professionnal 10.13</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Apple Certified Support Professionnal 10.11</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Apple Certified Macintosh Technician</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Apple Certified iOS Technician</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Apple Certified Associate Mac Integration 10.7</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    <br/>
+                    <span class="text-sm"><i class="fas fa-caret-right text-custom-green"></i> Apple Certified Product Professionnal</span>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Skills Section -->
+    <section id="skills" class="container-fluid container-xl section-space">
+        <div class="row text-center mb-5">
+            <div class="col-xl-12">
+                <h3 class="h3-sm text-light">Compétences</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div 
+            class="col-6 col-xl-3 pl-3 pl-xl-0 mb-5 mb-xl-0"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <div>
+                    <i class="fas fa-server skills-logo"></i>
+                    <h6 class="text-sm text-light mt-1">Back-end</h6>
+                </div>
+                
+                <div class="bg-grey mt-4 p-3 text-light text-sm">
+                    <p class="mt-1 mb-0">
+                    PHP
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Symfony
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    MySQL
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Doctrine
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    API Rest
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    API Platform
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div 
+            class="col-6 col-xl-3 mb-5 mb-xl-0"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <div>
+                    <i class="fas fa-window-maximize skills-logo"></i>
+                    <h6 class="text-sm text-light mt-1">Front-end</h6>
+                </div>
+                
+                <div class="bg-grey mt-4 p-3 text-light text-sm">
+                    <p class="mt-1 mb-0">
+                    JavaScript
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Sal, Rellax, Lax.js
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    jQuery
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    HTML5
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    CSS3
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Bootstrap
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Materialize
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div 
+            class="col-6 col-xl-3 mb-5 mb-xl-0"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <div>
+                    <i class="fas fa-tools skills-logo"></i>
+                    <h6 class="text-sm text-light mt-1">Outils</h6>
+                </div>
+                
+                <div class="bg-grey mt-4 p-3 text-sm text-light">
+                    <p class="mt-1 mb-0">
+                    Git
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    GitHub
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Composer
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    NPM
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Postman
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Wordpress
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Adobe Xd
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div 
+            class="col-6 col-xl-3 pr-3 pr-xl-0"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <div>
+                    <i class="fas fa-tasks skills-logo"></i>
+                    <h6 class="text-sm text-light mt-1">Gestion de projets</h6>
+                </div>
+                
+                <div class="bg-grey mt-4 p-3 text-light text-sm">
+                    <p class="mt-1 mb-0">
+                    UML
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    TDD
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Kanban
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                    <p class="mt-1 mb-0">
+                    Scrum
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Projects Section -->
+    <section id="projects" class="container-fluid container-xl section-space">
+        <div class="row">
+            <div class="col-xl-12 text-center mb-4">
+                <h3 class="h3-sm text-light">Réalisations</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 pl-3 pr-3 pl-xl-0 pr-xl-0 d-flex flex-wrap justify-content-between">            
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_9.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Conception d'un blog sans utiliser de framework</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-php"></i> PHP</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_8.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Ecriture du cahier des charges et conception de la maquette</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-bootstrap"></i> Bootstrap</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_7.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-2 mb-0">Intégration d'un thême ainsi que d'un plugin de gestion immobilier et sa traduction</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-wordpress"></i> Wordpress</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_6.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Conception d'un Memory Game</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-js"></i> Javascript</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_5.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Conception d'une application d'aide aux diagnostiques et suivi de centres techniques</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-symfony"></i> Symfony</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_4.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Conception d'un blog pour un écrivain</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-php"></i> PHP</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_3.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Conception d'une carte interactive de location de vélo à Toyama</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-js"></i> Javascript</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_2.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Personnalisation d'un thême pour l'office du tourisme sans thême builder</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-wordpress"></i> Wordpress</small>
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure class="imghvr-push-down width-32 width-sm-100 mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <img src="images/projects/projet_1.png" class="cover">
+                    <figcaption style="background-color: #8DC246;" class="d-flex flex-column justify-content-center align-items-start text-sm">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <div class="admin-btn">
+                            <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                            <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        </div>
+                        {% endif %}
+
+                        <i class="fas fa-search-plus"></i>
+                        <p class="mt-3 mb-0">Intégration d'une maquette fournis par un graphiste</p>
+                        <p class="flex-row mt-3 mb-0">
+                            <small class="tag-project"><i class="fab fa-html5"></i> HTML5</small>
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="container-fluid container-xl section-space">
+        <div class="row">
+            <div class="col-xl-12 text-center mb-4">
+                <h3 class="h3-sm text-light">Expériences</h3>
+            </div>
+        </div>
+        <div class="row text-light">
+            <div class="col-xl-12 d-flex justify-content-between flex-wrap px-3 p-xl-0">
+                <div 
+                class="width-49 width-sm-100 bg-grey mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-4 p-3">
+                            <figure class="width-100 pl-3 mb-0">
+                                <img class="width-100" src="images/profil.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-8 p-4 p-xl-3">
+                            <h5 class="h5-sm mb-0 text-custom-green">
+                            Développeur Web Freelance
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                                <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                                {% endif %}
+                            </h5>
+                            <p class="text-sm mb-3"><small><i class="fas fa-calendar-alt mr-2"></i>Depuis 2020 - <i class="fas fa-map-marker-alt mr-2"></i>Reims</small></p>
+
+                            <p class="text-sm mb-0"><small>Responsabilités:</small></p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Analyse des besoins clients</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Conception d'une solution sur mesure</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Formation utilisateurs</p>
+                        </div>
+                    </div>
+                </div>
+                <div 
+                class="width-49 width-sm-100 bg-grey mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-4 p-3">
+                            <figure class="width-100 pl-3 mb-0">
+                                <img class="width-100" src="images/jobs/logo-ia.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-8 p-4 p-xl-3">
+                            <h5 class="h5-sm mb-0 text-custom-green">
+                            Responsable Technique AASP
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                                <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                                {% endif %}
+                            </h5>
+                            <p class="text-sm mb-3"><small><i class="fas fa-calendar-alt mr-2"></i>2016/2020 - <i class="fas fa-map-marker-alt mr-2"></i>Reims</small></p>
+
+                            <p class="text-sm mb-0"><small>Responsabilités:</small></p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Gestion d’une équipe technique (3 personnes)</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Formation des nouveaux techniciens</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Suivi des objectifs de performances</p>
+                        </div>
+                    </div>
+                </div>
+                <div 
+                class="width-49 width-sm-100 bg-grey mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-4 p-3">
+                            <figure class="width-100 pl-3 mb-0">
+                                <img class="width-100" src="images/jobs/logo-ia.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-8 p-3">
+                            <h5 class="h5-sm mb-0 text-custom-green">
+                            Technicien Informatique AASP
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                                <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                                {% endif %}
+                            </h5>
+                            <p class="text-sm mb-3"><small><i class="fas fa-calendar-alt mr-2"></i>2013/2016 - <i class="fas fa-map-marker-alt mr-2"></i>Reims</small></p>
+
+                            <p class="text-sm mb-0"><small>Responsabilités:</small></p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Gestion des interventions sur produits Apple</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Gestion de la relations clientèles</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Suivi de la facturation</p>
+                        </div>
+                    </div>
+                </div>
+                <div 
+                class="width-49 width-sm-100 bg-grey mb-4"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-4 p-3">
+                            <figure class="width-100 pl-3 mb-0">
+                                <img class="width-100" src="images/jobs/logo-serians.png" alt="">
+                            </figure>
+                        </div>
+                        <div class="col-8 p-3">
+                            <h5 class="h5-sm mb-0 text-custom-green">
+                            Technicien Informatique
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                                <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                                {% endif %}
+                            </h5>
+                            <p class="text-sm mb-3"><small><i class="fas fa-calendar-alt mr-2"></i>2007/2013 - <i class="fas fa-map-marker-alt mr-2"></i>Nord-Est</small></p>
+
+                            <p class="text-sm mb-0"><small>Responsabilités:</small></p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Gestion des dépannages sur site (H+4)</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Gestion des dépannages Help Desk</p>
+                            <p class="text-sm mb-0"><i class="fas fa-caret-right text-custom-green"></i> Gestion d'un parc
+                                informatique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendation Section -->
+    <section id="recommandations" class="container-fluid container-xl section-space">
+        <div class="row">
+            <div class="col-xl-12 text-center mb-4">
+                <h3 class="h3-sm text-light">Recommandations</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center flex-wrap pl-xl-0 pr-xl-0">
+                <div 
+                class="width-sm-100 width-40 bg-grey p-4 text-center text-light position-relative"
+                data-sal="slide-up"
+                data-sal-duration="800"
+                data-sal-easing="ease-out-bounce">
+                    <h5 class="admin-btn bg-transparent">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <span class="text-secondary pointer"><i class="fas fa-pen"></i></span>
+                        <span class="text-danger pointer"><i class="fas fa-trash-alt"></i></span>
+                        {% endif %}
+                    </h5>
+                    <figure class="mt-4 mb-4 bg-light mx-auto recommendation-avatar">
+                        <i class="fas fa-user text-dark m-0 p-0"></i>
+                    </figure>
+                    <h5 class="h5-sm text-custom-green mb-0">Michaël Godinho Da Costa</h5>
+                    <p class="text-sm mb-4"><small>Mentor</small></p>
+
+                    <p class="text-sm text-justify pb-0">Thomas est quelqu'un de très organisé et pragmatique. Cela se ressent dans son travail et dans son attitude.<br/>
+                    Il est très minutieux et s'attarde sur chaque détail que ce soit du côté visible de l'iceberg (partie client d'un site/d'une application) comme la partie cachée de l'iceberg (partie backend).<br/><br/>
+
+                    Il est également très persévérant. Il n'a rien lâché durant la formation pour surmonter chaque obstacle. Il a d'ailleurs su franchir tous les obstacles pour arriver à la fin du parcours qu'il a suivi.<br/><br/>
+
+                    Ce fut un plaisir de suivre Thomas dans sa progression durant sa formation car c'est une personne agréable, qui sait ce qu'elle veut et qui met tout en oeuvre pour réussir.<br/>
+                    Vous pouvez confier à Thomas les tâches les plus importantes de votre projet en fermant les yeux car il étudiera toujours avec sérieux le problème pour le résoudre en respectant les normes et de la manière la plus efficace possible. 👍</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container-fluid container-xl section-space">
+        <div class="row">
+            <div class="col-xl-12 text-center mb-4">
+                <h3 class="h3-sm text-light">Contactez Moi</h3>
+            </div>
+        </div>
+        <div class="row px-3 px-xl-0">
+            <div 
+            class="col-12 col-xl-6"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <form action="{{path('email')}}" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-xl-6">
+                            <input type="hidden" name="nospam">
+                            <input type="text" class="form-control form-custom text-sm" placeholder="Prénom" name="firstname" required>
+                        </div>
+                        <div class="form-group col-12 col-xl-6">
+                            <input type="text" class="form-control form-custom text-sm" placeholder="Nom" name="lastname" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input type="email" class="form-control form-custom text-sm" placeholder="Email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <textarea class="form-control form-custom text-sm" rows="10" placeholder="Message" name="content" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col pl-4">
+                            <input type="checkbox" class="form-check-input" id="check-form" name="check-form" required>
+                            <label class="form-check-label text-light text-sm" for="check-form"><small>Vos données ne seront jamais utilisés en dehors de cette email.</small></label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input type="submit" class="btn btn-custom-green text-light form-control h5-sm mb-5 mb-xl-1" value="Envoyer">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div 
+            class="col-12 col-xl-6"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease-out-bounce">
+                <div class="row d-flex flex-row justify-content-between flex-wrap">                
+                    <div class="width-49 bg-grey p-3 text-center text-light mb-3">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <a href="http://simplecoder.fr" target="_blank"><i class="fas fa-pencil-alt contact-logo"></i></a>
+                            </div>
+                            <div class="col-12 col-xl-8 text-center text-xl-left align-self-center">
+                                <a href="http://simplecoder.fr" target="_blank" class="mb-0 text-white text-sm">Blog</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="width-49 bg-grey p-3 text-center text-light mb-3">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <a href="https://discord.gg/AFGmzBz" target="_blank"><i class="fab fa-discord contact-logo"></i></a>
+                            </div>
+                            <div class="col-12 col-xl-8 text-center text-xl-left align-self-center">
+                                <a href="https://discord.gg/AFGmzBz" target="_blank" class="mb-0 text-white text-sm">Discord</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="width-49 bg-grey p-3 text-center text-light mb-3">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <a href="https://github.com/ThomasG51" target="_blank"><i class="fab fa-github contact-logo"></i></a>
+                            </div>
+                            <div class="col-12 col-xl-8 text-center text-xl-left align-self-center">
+                                <a href="https://github.com/ThomasG51" target="_blank" class="mb-0 text-white text-sm">GitHub</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="width-49 bg-grey p-3 text-center text-light mb-3">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <a href="https://www.linkedin.com/in/thomasgeorge51/" target="_blank"><i class="fab fa-linkedin-in contact-logo"></i></a>
+                            </div>
+                            <div class="col-12 col-xl-8 text-center text-xl-left align-self-center">
+                                <a href="https://www.linkedin.com/in/thomasgeorge51/" target="_blank" class="mb-0 text-white text-sm">LinkedIn</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="width-49 bg-grey p-3 text-center text-light mb-3">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <a href="https://twitter.com/ThomasG51" target="_blank"><i class="fab fa-twitter contact-logo"></i></a>
+                            </div>
+                            <div class="col-12 col-xl-8 text-center text-xl-left align-self-center">
+                                <a href="https://twitter.com/ThomasG51" target="_blank" class="mb-0 text-white text-sm">Twitter</a>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="width-49 bg-grey p-3 text-center text-light mb-3">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <a href="https://www.instagram.com/thomas_george_51" target="_blank"><i class="fab fa-instagram contact-logo"></i></a>
+                            </div>
+                            <div class="col-12 col-xl-8 ext-center text-xl-left align-self-center">
+                                <a href="https://www.instagram.com/thomas_george_51" target="_blank" class="mb-0 text-white text-sm">Instagram</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script type="text/javascript">
+        
+        // Blinking Cursor
+        setInterval(() => {
+            $('#cursor').toggle();
+        }, 400);
+
+        // show more details on education section
+        $('.more-btn').click(function(){
+            let btn_id = $(this).attr('id');
+            let id = btn_id.replace('btn-diplome', '');
+            let show_id = '#show' + id;
+
+            $(show_id).slideToggle();
+
+            // Replace chevron direction
+            if ($(this).hasClass('fa-chevron-down')) {
+                $(this).removeClass('fa-chevron-down')
+                $(this).addClass('fa-chevron-up')
+            } else {
+                $(this).removeClass('fa-chevron-up')
+                $(this).addClass('fa-chevron-down')
+            }
+        });
+
+        // Show/hide sidebar menu
+        $('.menu-burger').click(function(){
+            $('.sidebar').css('right', '0vw');
+        });
+        
+        $('.menu-items , .menu-close').click(function(){
+            
+            if($(window).width() <= 1024)
+            {
+                $('.sidebar').css('right', '-100vw');
+            }
+            else
+            {
+                $('.sidebar').css('right', '-20vw');
+            }
+        });
+
+        // Smooth scroll
+        $('.menu-link').click(function(){
+            let id = $(this).attr('href');
+            let section_scope = $(id).offset().top;
+
+            $('html,body').animate({
+                scrollTop: (section_scope - 40)
+            }, 500);
+        });
+        
+    </script>
+{% endblock %}
